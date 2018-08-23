@@ -1,14 +1,23 @@
 from flask import Flask, render_template, request, redirect
 import turicreate as tc
+import re
 
 app = Flask(__name__)
-#
-# data = tc.load_sframe('test.sframe')
-# model = tc.load_model('imgset')
-#
-# image_show = model.query(data[0:10], k=20)
-#
-#
+
+imgframe = tc.load_sframe('test.sframe')
+model = tc.load_model('imgset')
+queryframe = tc.image_analysis.load_images('./upload')
+queryframe = queryframe.add_row_number()
+queryframe.save('./querydata')
+queryframe.explore()
+
+query_results = model.query(dataset = queryframe[0:1], k=None, radius = None, verbose = True)
+
+pathlist=[]
+cut = re.compile(r"\d{13}[.]jpg")
+for path in resultpathlist:
+    marknum = cut.findall(path)
+    pathlist.append(marknum[0])
 
 class Distance :
     distance_total=[
