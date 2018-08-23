@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-import turicreate as tc
+#import turicreate as tc
 
 app = Flask(__name__)
 #
