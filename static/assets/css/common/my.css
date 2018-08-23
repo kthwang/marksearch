@@ -1,0 +1,13 @@
+video {
+  z-index: -1;
+  object-fit: cover;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  opacity: 0.8;
+}
+
+#matrix {
+    z-index: -1;
+    background-image: url("https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif");
+    background-size: cover;
+}

@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MarkSearch</title>
+	<!-- ================== GOOGLE FONTS ==================-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
+	<!-- ======================= GLOBAL VENDOR STYLES ========================-->
+	<link rel="stylesheet" href="../static/assets/css/vendor/bootstrap.css">
+	<link rel="stylesheet" href="../static/assets/vendor/metismenu/dist/metisMenu.css">
+	<link rel="stylesheet" href="../static/assets/vendor/metismenu/dist/mm-folder.css">
+	<link rel="stylesheet" href="../static/assets/vendor/prism/prism.css">
+		<!-- ======================= LINE AWESOME ICONS ===========================-->
+		<link rel="stylesheet" href="../static/assets/css/icons/line-awesome.min.css">
+		<link rel="stylesheet" href="../static/assets/css/icons/simple-line-icons.css">
+	<!-- ======================= FONT AWESOME ICONS ===========================-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+	<!-- ======================= DRIP ICONS ===================================-->
+	<link rel="stylesheet" href="../static/assets/css/icons/dripicons.min.css">
+	<!-- ======================= GLOBAL COMMON STYLES ============================-->
+	<link rel="stylesheet" href="../static/assets/css/common/main.bundle.css">
+	<!-- ======================= LAYOUT TYPE ===========================-->
+	<link rel="stylesheet" href="../static/assets/css/layouts/vertical/core/main.css">
+	<!-- ======================= MENU TYPE ===========================-->
+	<link rel="stylesheet" href="../static/assets/css/layouts/vertical/menu-type/fixed.css">
+	<!-- ======================= THEME COLOR STYLES ===========================-->
+	<link rel="stylesheet" href="../static/assets/css/layouts/vertical/themes/theme-j.css">
+    <!-- ======================= CUSTMIZING ======================= -->
+    <link rel="stylesheet" href="../static/assets/css/common/my.css">
+	<style>
+		.doc-menu li a i{
+			vertical-align: sub!important;
+		}
+	</style>
+</head>
+<body class="layout-fixed fixed-menu">
+	<!-- START APP WRAPPER -->
+	<div id="app">
+		<!-- START MENU SIDEBAR WRAPPER -->
+		<aside class="sidebar sidebar-left">
+			<div class="sidebar-content">
+				<div class="aside-toolbar">
+					<ul class="site-logo">
+						<li>
+							<!-- START LOGO -->
+							<a href="/">
+								<div class="logo">
+									<svg id="logo" width="25" height="25" viewBox="0 0 54.03 56.55">
+										<defs>
+											<linearGradient id="logo_background_color">
+												<stop class="stop1" offset="30%"></stop>
+												<stop class="stop2" offset="80%"></stop>
+												<stop class="stop3" offset="100%"></stop>
+											</linearGradient>
+										</defs>
+										<path id="logo_path" class="cls-2" d="M90.32,0c14.2-.28,22.78,7.91,26.56,18.24a39.17,39.17,0,0,1,1,4.17l.13,1.5A15.25,15.25,0,0,1,118.1,29v.72l-.51,3.13a30.47,30.47,0,0,1-3.33,8,15.29,15.29,0,0,1-2.5,3.52l.06.07c.57.88,1.43,1.58,2,2.41,1.1,1.49,2.36,2.81,3.46,4.3.41.55,1,1,1.41,1.56.68.92,1.16,1.89.32,3.06-.08.12-.08.24-.19.33a2.39,2.39,0,0,1-2.62.07,4.09,4.09,0,0,1-.7-.91c-.63-.85-1.41-1.61-2-2.48-1-1.42-2.33-2.67-3.39-4.1a16.77,16.77,0,0,1-1.15-1.37c-.11,0-.06,0-.13.07-.41.14-.65.55-1,.78-.72.54-1.49,1.08-2.24,1.56A29.5,29.5,0,0,1,97.81,53c-.83.24-1.6.18-2.5.39a16.68,16.68,0,0,1-3.65.26H90.58L88,53.36A36.87,36.87,0,0,1,82.71,52a27.15,27.15,0,0,1-15.1-14.66c-.47-1.1-.7-2.17-1.09-3.39-1-3-1.45-8.86-.51-12.38a29,29,0,0,1,2.56-7.36c3.56-6,7.41-9.77,14.08-12.57a34.92,34.92,0,0,1,4.8-1.3Zm.13,4.1c-.45.27-1.66.11-2.24.26a32.65,32.65,0,0,0-4.74,1.37A23,23,0,0,0,71,18.7,24,24,0,0,0,71.13,35c2.78,6.66,7.2,11.06,14.21,13.42,1.16.39,2.52.59,3.84.91l1.47.07a7.08,7.08,0,0,0,2.43,0H94c.89-.21,1.9-.28,2.75-.46V48.8A7.6,7.6,0,0,1,95.19,47c-.78-1-1.83-1.92-2.62-3s-1.86-1.84-2.62-2.87c-2-2.7-4.45-5.1-6.66-7.62-.57-.66-1.14-1.32-1.66-2-.22-.29-.59-.51-.77-.85a2.26,2.26,0,0,1,.58-2.61,2.39,2.39,0,0,1,2.24-.2,4.7,4.7,0,0,1,1.22,1.3l.51.46c.5.68,1,1.32,1.6,2,2.07,2.37,4.38,4.62,6.27,7.17.94,1.26,2.19,2.3,3.14,3.58l1,1c.82,1.1,1.8,2,2.62,3.13.26.35.65.6.9,1A23.06,23.06,0,0,0,105,45c.37-.27,1-.51,1.15-1h-.06c-.18-.51-.73-.83-1-1.24-.74-1-1.64-1.88-2.37-2.87-1.8-2.44-3.89-4.6-5.7-7-.61-.82-1.44-1.52-2-2.34-.85-1.16-3.82-3.73-1.54-5.41a2.27,2.27,0,0,1,1.86-.26c.9.37,2.33,2.43,2.94,3.26s1.27,1.31,1.79,2c1.44,1.95,3.11,3.66,4.54,5.6.41.55,1,1,1.41,1.56.66.89,1.46,1.66,2.11,2.54.29.39.61,1.06,1.09,1.24.54-1,1.34-1.84,1.92-2.8a25.69,25.69,0,0,0,2.5-6.32c1.27-4.51.32-10.37-1.15-13.81A22.48,22.48,0,0,0,100.75,5.94a35.12,35.12,0,0,0-6.08-1.69A20.59,20.59,0,0,0,90.45,4.11Z" transform="translate(-65.5)" fill="url(#logo_background_color)"></path>
+									</svg>
+								</div>
+								<span class="brand-text">MarkSearch</span>
+							</a>
+							<!-- END LOGO -->
+						</li>
+					</ul>
+					<ul class="header-controls">
+						<li class="nav-item menu-trigger">
+							<button type="button" class="btn btn-link btn-menu" data-toggle-state="mini-sidebar" data-key="leftSideBar">
+								<i class="la la-dot-circle-o"></i>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<nav class="main-menu">
+					<ul class="nav metismenu doc-menu">
+						<li class="active">
+							<a href="#intro" class="smooth-scroll">
+								<i class="icon dripicons-home"></i>
+								<span>Introduction</span>
+							</a>
+						</li>
+						<li>
+							<a href="#upload" class="smooth-scroll">
+								<i class="icon dripicons-upload"></i>
+								<span>Upload Image</span>
+							</a>
+						</li>
+						<li>
+							<a href="#search_image" class="smooth-scroll">
+								<i class="icon dripicons-search"></i>
+								<span>Image Search</span>
+							</a>
+						</li>
+						<li>
+							<a href="#similar_list" class="smooth-scroll">
+								<i class="icon dripicons-camera"></i>
+								<span>Similarity List</span>
+							</a>
+						</li>
+						<li>
+							<a href="#analysis" class="smooth-scroll">
+								<i class="la la-signal"></i>
+								<span>Data Analysis</span>
+							</a>
+						</li>
+						<li>
+							<a href="#reference" class="smooth-scroll">
+								<i class="la la-book"></i>
+								<span>Reference Data</span>
+							</a>
+						</li>
+						<li>
+							<a href="#github" class="smooth-scroll">
+									<i class="la la-github"></i>
+								<span>GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR WRAPPER -->
+		<div class="content-wrapper">
+			<!-- START LOGO WRAPPER -->
+			<nav class="top-toolbar navbar navbar-mobile navbar-tablet">
+				<ul class="navbar-nav nav-left">
+					<li class="nav-item">
+						<a href="javascript:void(0)" data-toggle-state="aside-left-open">
+							<i class="icon dripicons-align-left"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav nav-center site-logo">
+					<li>
+						<a href="index.html">
+							<h1 class="brand-text">QuantumPro</h1>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- END LOGO WRAPPER -->
+			<!-- START TOP TOOLBAR WRAPPER -->
+			<nav class="top-toolbar navbar navbar-desktop flex-nowrap">
+
+			</nav>
+			<!-- END TOP TOOLBAR WRAPPER -->
+			<div class="content">
+				<!--START PAGE HEADER -->
+				<header class="page-header">
+					<div class="d-flex align-items-center">
+						<div class="mr-auto">
+						</div>
+					</div>
+				</header>
+				<!--END PAGE HEADER -->
+				<!--START PAGE CONTENT -->
+
+
+				<section class="page-content container-fluid" id="intro">
+					<div class="row">
+						<div class="col">
+                            <div class="card text-center" id="packages">
+                                <h5 class="card-header">서비스 소개</h5>
+                                <div class="card-body"></div>
+                            </div>
+                            <div class="card text-center" >
+                                <div class="card-body row mt-1">
+                                    <div class="col-12">
+                                        <div class="intro card-body text-justify">
+                                            ---------이미지 추가예정입니다---------
+                                            <br/><br/>
+                                            현재 삼성과 애플 등 대기업의 특허 전쟁이 이어지면서 특허의 중요성이 일반인들에게도 알려졌습니다.
+                                            <br/><br/>
+                                            또한, 창업 열풍이 불면서 대기업과 스타트업 간, 또는 스타트업과 스타트업 간의 상표권 분쟁이 활발히 진행되고 있습니다.
+                                            <br/><br/>
+                                            이처럼 지식재산권에 대한 사람들의 관심은 많아진 것에 반해 이미지 특허에 대한 검색은 까다롭고, 검색 조건은 많은데 반해 이미지를 통한 검색은 제공하지 않습니다.
+                                            <br/><br/>
+                                            우리는 상표를 등록하려는 사람들이 미리 비슷한 상표를 검색해보고, 상표권 분쟁을 예방할 수 있도록 상표 이미지 검색 서비스를 제공합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        아래와 같이 동일한 텍스트라도 다양한 상표가 될 수 있습니다.
+                                        <br/>
+                                        <img src="https://media.giphy.com/media/5U9HVM2W1aE5G/giphy.gif" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page-content container-fluid">
+					<div class="row">
+						<div class="col">
+                            <div class="card text-center" id="packages">
+                                <h5 class="card-header">개발과정 소개</h5>
+                                <div class="card-body"></div>
+                            </div>
+                            <div class="row">
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <img class="card-img-top px-5" src="https://image.flaticon.com/icons/svg/1076/1076320.svg" alt="Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY">
+                                        <div class="card-body">
+                                            <h5 class="card-title">데이터 수집</h5>
+                                            <p class="card-text">공공데이터 포털 API를 통해 약 2,000,000개의 상표 이미지와 서지정보를 수집했습니다.
+                                                <br/>
+                                                python의 requests package를 이용해 xml 데이터를 수집하고, 수집한 데이터는 etree package로 파싱했습니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img class="card-img-top px-5 py-5" src="https://image.flaticon.com/icons/svg/944/944178.svg" alt="Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY">
+                                        <div class="card-body">
+                                            <h5 class="card-title">모델 생성</h5>
+                                            <p class="card-text">수집한 상표 이미지와 turicreate 플랫폼을 이용하여 이미지 간의 거리를 구했습니다.
+                                                <br/>
+                                                이 플랫폼은 ImageNet 등 방대한 dataset으로 미리 훈련된 CNN 모델을 사용하며,
+                                                CNN에서 추출한 벡터값을 nearest neighbors 모델에 적용하여 최종 결과를 산출합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img class="card-img-top px-5 py-5" src="https://image.flaticon.com/icons/svg/762/762719.svg" alt="Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY">
+                                        <div class="card-body">
+                                            <h5 class="card-title">시스템 개발</h5>
+                                            <p class="card-text">수집하고, 훈련한 결과물을 필요한 사람에게 보여주기 위해 flask framework를 이용하여 시스템을 개발했습니다.
+                                                <br/>
+                                                누구나 이 시스템에서 원하는 이미지와 비슷한 상표 이미지를 검색해볼 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+				<section class="page-content container-fluid" id="upload">
+					<div class="row">
+						<div class="col">
+                            	<div class="card text-center" id="packages">
+                                    <h5 class="card-header">이미지 업로드</h5>
+							    </div>
+                                <div class="col-xl-12" id="matrix">
+                                    <div class="card" data-widget="dropzone">
+                                        <div class="card-body min-h-400">
+                                            <form action="../assets/file-upload" class="dropzone" id="singleFileUpload">
+                                                 <div class="dz-message needsclick singleFileUpload"  >
+                                                 <h6 class="card-title text-center p-t-50">파일을 올려놓거나, 클릭후 업로드해주세요.</h6>
+                                                 <i class="icon dripicons-cloud-upload gradient-1"></i>
+                                                 <div class="d-block text-center">
+                                                  <button type="button" class="btn btn-primary btn-rounded btn-floating btn-lg">Upload</button>
+                                                    </div>
+                                                 </div>
+                                            </form>
+                                        </div>
+							        </div>
+							    </div>
+                        </div>
+                    </div>
+                </section>
+                 <section class="page-content container-fluid" id="search_image">
+					<div class="row">
+						<div class="col-12">
+                            <div class="card text-center" id="packages">
+                                <h5 class="card-header">이미지 검색</h5>
+                            </div>
+                            <div class="card">
+                     <div class="card-content">
+                        <img class="card-img-top img-fluid" src="../static/assets/img/demos/31.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">이미지 번호</h4>
+                            <p class="card-text">이미지 설명</p>
+                            <a href="#" class="btn btn-primary">분석 시작</a>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                 </section>
+                <section class="page-content container-fluid" id="similar_list" >
+                    <div class="row">
+						<div class="col-12">
+                            <div class="card text-center" id="packages">
+                                <h5 class="card-header">유사도 리스트</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="card-deck">
+								<div class="card">
+									<img class="card-img-top" src="../static/assets/img/demos/33.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">이미지번호1</h5>
+										<p class="card-text">이미지설명1</p>
+										<p class="card-text"><small class="text-muted">distance값</small></p>
+									</div>
+								</div>
+								<div class="card">
+									<img class="card-img-top" src="../static/assets/img/demos/34.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">이미지번호2</h5>
+										<p class="card-text">이미지설명2</p>
+										<p class="card-text"><small class="text-muted">distance값</small></p>
+									</div>
+								</div>
+								<div class="card">
+									<img class="card-img-top" src="../static/assets/img/demos/35.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">이미지번호3</h5>
+										<p class="card-text">이미지설명3</p>
+										<p class="card-text"><small class="text-muted">distance값</small></p>
+									</div>
+								</div>
+							</div>
+                    </div>
+                    <section class="page-content container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+										<div class="card">
+											<h5 class="card-header">부가 이미지 리스트</h5>
+											<div class="card-body p-0 ">
+												<div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+													<ol class="carousel-indicators">
+														<li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+														<li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+														<li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+													</ol>
+													<div class="carousel-inner">
+														<div class="carousel-item active">
+															<img class="d-block" style="width:100%" src="../static/assets/img/demos/7.jpg" alt="First slide">
+														</div>
+														<div class="carousel-item">
+															<img class="d-block" style="width:100%" src="../static/assets/img/demos/8.jpg" alt="Second slide">
+														</div>
+														<div class="carousel-item">
+															<img class="d-block" style="width:100%" src="../static/assets/img/demos/9.jpg" alt="Third slide">
+														</div>
+													</div>
+													<a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+														<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+														<span class="sr-only">Previous</span>
+													</a>
+													<a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+														<span class="carousel-control-next-icon" aria-hidden="true"></span>
+														<span class="sr-only">Next</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+                        </div>
+                        </section>
+                </section>
+                <section class="page-content container-fluid" id="analysis">
+					<div class="row">
+						<div class="col-12">
+                            <div class="card text-center" id="packages">
+                                <h5 class="card-header">데이터 분석</h5>
+                            </div>
+                            <div class="card">
+								<div class="row m-0 col-border-xl">
+									<div class="col-md-12 col-lg-6 col-xl-3">
+										<div class="card-body">
+											<div class="icon-rounded icon-rounded-primary float-left m-r-20">
+												<i class="icon dripicons-graph-bar"></i>
+											</div>
+											<h5 class="card-title m-b-5 counter" data-count="5627">0</h5>
+											<h6 class="text-muted m-t-10">
+												Active Sessions
+											</h6>
+											<div class="progress progress-active-sessions mt-4" style="height:7px;">
+												<div class="progress-bar bg-primary" role="progressbar" style="" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+											<small class="text-muted float-left m-t-5 mb-3">
+												Change
+											</small>
+											<small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="72">
+												0
+											</small>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-3">
+										<div class="card-body">
+											<div class="icon-rounded icon-rounded-accent float-left m-r-20">
+												<i class="icon dripicons-cart"></i>
+											</div>
+											<h5 class="card-title m-b-5 append-percent counter" data-count="67">0</h5>
+											<h6 class="text-muted m-t-10">
+												Add to Cart
+											</h6>
+											<div class="progress progress-add-to-cart mt-4" style="height:7px;">
+												<div class="progress-bar bg-accent" role="progressbar" style="" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+											<small class="text-muted float-left m-t-5 mb-3">
+												Change
+											</small>
+											<small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="67">
+												0
+											</small>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-3">
+										<div class="card-body">
+											<div class="icon-rounded icon-rounded-info float-left m-r-20">
+												<i class="icon dripicons-mail"></i>
+											</div>
+											<h5 class="card-title m-b-5 counter" data-count="337">0</h5>
+											<h6 class="text-muted m-t-10">
+												Newsletter Sign Ups
+											</h6>
+											<div class="progress progress-new-account mt-4" style="height:7px;">
+												<div class="progress-bar bg-info" role="progressbar" style="" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+											<small class="text-muted float-left m-t-5 mb-3">
+												Change
+											</small>
+											<small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="83">
+												0
+											</small>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-6 col-xl-3">
+										<div class="card-body">
+											<div class="icon-rounded icon-rounded-success float-left m-r-20">
+												<i class="la la-dollar f-w-600"></i>
+											</div>
+											<h5 class="card-title m-b-5 prepend-currency counter" data-count="37873">0</h5>
+											<h6 class="text-muted m-t-10">
+												Total Revenue
+											</h6>
+											<div class="progress progress-total-revenue mt-4" style="height:7px;">
+												<div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+											<small class="text-muted float-left m-t-5 mb-3">
+												Change
+											</small>
+											<small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="77">
+												0
+											</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-7 col-xxl-9">
+							<div class="card">
+								<h5 class="card-header">
+									Monthly budget
+								</h5>
+								<div class="card-body">
+									<div id="monthly-budget">
+										<div id="monthly-budget-content" style="height: 350px">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-5 col-xxl-3">
+							<div class="card">
+								<div class="card-header">Audit Log
+									<div class="actions top-right">
+										<div class="dropdown">
+											<a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<i class="la la-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right animation">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="timeline timeline-border">
+										<div class="timeline-list">
+											<div class="timeline-info">
+												<div class="d-inline-block">Server pending</div>
+												<small class="float-right text-muted">Now</small>
+											</div>
+										</div>
+										<div class="timeline-list timeline-border timeline-primary">
+											<div class="timeline-info">
+												<div class="d-inline-block">Delivery complete</div>
+												<small class="float-right text-muted">10min.</small>
+											</div>
+										</div>
+										<div class="timeline-list  timeline-border timeline-accent">
+											<div class="timeline-info">
+												<div class="d-inline-block">Delivery processing</div>
+												<small class="float-right text-muted">1hr.</small>
+											</div>
+										</div>
+										<div class="timeline-list  timeline-border timeline-success">
+											<div class="timeline-info">
+												<div class="d-inline-block">Payment recorded</div>
+												<small class="float-right text-muted">11:22am</small>
+											</div>
+										</div>
+										<div class="timeline-list  timeline-border timeline-warning">
+											<div class="timeline-info">
+												<div class="d-inline-block">Order complete</div>
+												<small class="float-right text-muted">9:30AM</small>
+											</div>
+										</div>
+										<div class="timeline-list  timeline-border timeline-info">
+											<div class="timeline-info">
+												<div class="d-inline-block">Product quantities updated</div>
+												<small class="float-right text-muted">9:27am</small>
+											</div>
+										</div>
+										<div class="timeline-list  timeline-border timeline-info">
+											<div class="timeline-info">
+												<div class="d-inline-block">Ticket #627 Closed</div>
+												<small class="float-right text-muted">8:02am</small>
+											</div>
+										</div>
+										<div class="timeline-list  timeline-border timeline-info">
+											<div class="timeline-info">
+												<div class="d-inline-block">Cache cleared</div>
+												<small class="float-right text-muted">6:00am</small>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="card-deck m-b-30">
+								<div class="card">
+									<h5 class="card-header border-none">Users</h5>
+									<div class="card-body p-0">
+										<h4 class="card-title text-info p-t-10 p-l-15">67,325  <i class="zmdi zmdi-trending-up text-info"></i></h4>
+										<div class="h-200">
+											<canvas id="usersChart"></canvas>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<h5 class="card-header border-none">Bounce Rate</h5>
+									<div class="card-body p-0">
+										<h4 class="card-title text-warning p-t-10 p-l-15">3.69% <i class="zmdi zmdi-trending-down text-warning"></i></h4>
+										<div class="h-200">
+											<canvas id="bounceRateChart"></canvas>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<h5 class="card-header border-none">Session Duration</h5>
+									<div class="card-body p-0">
+										<h4 class="card-title text-primary p-t-10 p-l-15">13m 36s  <i class="zmdi zmdi-trending-up text-primary"></i></h4>
+										<div class="h-200">
+											<canvas id="sessionDuration"></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                            <div class="row">
+								<div class="col-lg-7">
+								<div class="card">
+									<h5 class="card-header p-t-25 p-b-20"><span class="">Distance</span></h5>
+									<div class="card-toolbar top-right">
+										<ul class="nav nav-pills nav-pills-primary justify-content-end" id="pills-demo-1" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Total</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">Almost Same</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">Similar</a>
+											</li>
+										</ul>
+									</div>
+									<div class="card-body">
+										<div class="tab-content" id="pills-tabContent-1">
+											<div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1">
+												<ul class="list-reset list-inline-block m-b-15">
+													<li class="m-r-5">
+														<span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Direct</span>
+													</li>
+													<li class="m-r-5">
+														<span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Referral</span>
+													</li>
+												</ul>
+												<div class="ct-chart" id="distance_total" style="height: 350px;"></div>
+											</div>
+											<div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2">
+
+												<ul class="list-reset list-inline-block m-b-15">
+													<li class="m-r-5">
+														<span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Direct</span>
+													</li>
+													<li class="m-r-5">
+														<span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Referral</span>
+													</li>
+												</ul>
+												<div class="ct-chart" id="distance_same" style="height: 350px;"></div>
+
+											</div>
+											<div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3">
+
+												<ul class="list-reset list-inline-block m-b-15">
+													<li class="m-r-5">
+														<span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Direct</span>
+													</li>
+													<li class="m-r-5">
+														<span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Referral</span>
+													</li>
+												</ul>
+												<div class="ct-chart" id="distance_similar" style="height: 350px;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-5">
+								<div class="card bg-primary" id="totalVisitsChart">
+									<div class="card-body p-0">
+										<div class="card-toolbar top-right">
+											<ul class="nav nav-pills nav-pills-light justify-content-end" id="total-visits-tab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" id="total-visits-link-1" data-toggle="pill" href="#total-visits-tab-1" role="tab" aria-controls="total-visits-tab-1" aria-selected="true">Average</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="total-visits-link-2" data-toggle="pill" href="#total-visits-tab-2" role="tab" aria-controls="total-visits-tab-2" aria-selected="false">Max</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="total-visits-link-3" data-toggle="pill" href="#total-visits-tab-3" role="tab" aria-controls="total-visits-tab-3" aria-selected="false">Min</a>
+												</li>
+											</ul>
+										</div>
+										<h5 class="card-title border-none text-white p-l-20 p-t-20 m-b-0">Distance</h5>
+										<div class="tab-content" id="total-visits-tab-content">
+											<div class="tab-pane fade show active" id="total-visits-tab-1" role="tabpanel" aria-labelledby="total-visits-tab-1">
+												<span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.distance_avg }}">0</span>
+											</div>
+											<div class="tab-pane fade" id="total-visits-tab-2" role="tabpanel" aria-labelledby="total-visits-tab-2">
+												<span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.distance_max }}">0</span>
+											</div>
+											<div class="tab-pane fade" id="total-visits-tab-3" role="tabpanel" aria-labelledby="total-visits-tab-3">
+												<span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.distance_min }}">0</span>
+											</div>
+										</div>
+										<div class="ct-chart h-75 m-t-40"></div>
+									</div>
+								</div>
+								<div class="card bg-accent" id="totalUniqueVisitsChart">
+									<div class="card-body p-0">
+										<div class="card-toolbar top-right">
+											<ul class="nav nav-pills nav-pills-light justify-content-end" id="total-uniquevisits-tab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" id="total-uniquevisits-link-1" data-toggle="pill" href="#total-uniquevisits-tab-1" role="tab" aria-controls="total-uniquevisits-tab-1" aria-selected="true">Total</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="total-uniquevisits-link-2" data-toggle="pill" href="#total-uniquevisits-tab-2" role="tab" aria-controls="total-uniquevisits-tab-2" aria-selected="false">Almost Same</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="total-uniquevisits-link-3" data-toggle="pill" href="#total-uniquevisits-tab-3" role="tab" aria-controls="total-uniquevisits-tab-3" aria-selected="false">Similar</a>
+												</li>
+											</ul>
+										</div>
+										<h5 class="card-title border-none text-white p-l-20 p-t-20  m-b-0">Count</h5>
+										<div class="tab-content" id="total-uniquevisits-tab-content">
+											<div class="tab-pane fade show active" id="total-uniquevisits-tab-1" role="tabpanel" aria-labelledby="total-uniquevisits-tab-1">
+												<span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.count_total }}">0</span>
+											</div>
+											<div class="tab-pane fade" id="total-uniquevisits-tab-2" role="tabpanel" aria-labelledby="total-uniquevisits-tab-2">
+												<span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.count_almost_same }}">0</span>
+											</div>
+											<div class="tab-pane fade" id="total-uniquevisits-tab-3" role="tabpanel" aria-labelledby="total-visits-tab-3">
+												<span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.count_similar }}">0</span>
+											</div>
+										</div>
+
+										<div class="ct-chart h-75 m-t-40"></div>
+									</div>
+								</div>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                <div class="card" id="barChartLineThree">
+								<h5 class="card-header">Overview</h5>
+								<div class="card-body">
+									<div class="row h-100">
+										<div class="col-4">
+											<div class="counter counter-md text-left">
+												<div class="f-w-400 ">USERS</div>
+												<div class="counter-number-group">
+													<span class="text-success">627,852 <i class="zmdi zmdi-trending-up font-size-14 text-success"></i></span>
+												</div>
+											</div>
+										</div>
+										<div class="col-4">
+											<div class="counter counter-sm text-left inline-block">
+												<div class="f-w-400">NEW SESSIONS</div>
+												<div class="counter-number-group">
+													<span class="text-info">412,346 <i class="zmdi zmdi-trending-up font-size-14 text-info"></i></span>
+												</div>
+											</div>
+										</div>
+										<div class="col-4">
+											<div class="counter counter-sm text-left inline-block">
+												<div class="f-w-400">BOUNCE RATE</div>
+												<div class="counter-number-group">
+													<span class="text-danger">17,555 <i class="zmdi zmdi-trending-down font-size-14 text-danger"></i></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="ct-chart line-chart h-300 mt-30"></div>
+								</div>
+							</div>
+                                </div>
+                            </div>
+					<div class="row">
+						<div class="col-lg-12 col-xl-12">
+							<div class="card">
+								<div class="card-header">Recent Transactions
+									<ul class="actions top-right">
+										<li><a href="javascript:void(0)" data-q-action="card-expand"><i class="icon dripicons-expand-2"></i></a></li>
+									</ul>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive">
+										<table id="recent-transaction-table" class="table table-striped table-bordered" style="width:100%">
+											<thead>
+												<tr>
+													<th>TRANSACTION ID</th>
+													<th>DATE</th>
+													<th>AMOUNT</th>
+													<th>STATUS</th>
+													<th class="no-sort">RECEIPT</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>440-23423</td>
+													<td>06/25/18</td>
+													<td>$650</td>
+													<td><span class="badge badge-pill badge-warning">Pending</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-29384</td>
+													<td>06/25/18</td>
+													<td>$550</td>
+													<td><span class="badge badge-pill badge-warning">Pending</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-23423</td>
+													<td>06/25/18</td>
+													<td>$550</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-23444</td>
+													<td>06/24/18</td>
+													<td>$950</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-243453</td>
+													<td>06/24/18</td>
+													<td>$250</td>
+													<td><span class="badge badge-pill badge-warning">Pending</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-23434</td>
+													<td>06/23/18</td>
+													<td>$900</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-23423</td>
+													<td>06/23/18</td>
+													<td>$830</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-6786</td>
+													<td>06/21/18</td>
+													<td>$230</td>
+													<td><span class="badge badge-pill badge-danger">Failed</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-36354</td>
+													<td>06/21/18</td>
+													<td>$1,034</td>
+													<td><span class="badge badge-pill badge-warning">Pending</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-34533</td>
+													<td>06/21/18</td>
+													<td>$5,300</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-678655</td>
+													<td>06/19/18</td>
+													<td>$627</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-343535</td>
+													<td>06/19/18</td>
+													<td>$350</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-796777</td>
+													<td>06/19/18</td>
+													<td>$600</td>
+													<td><span class="badge badge-pill badge-danger">Reversed</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-4534646</td>
+													<td>06/17/18</td>
+													<td>$900</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-35565</td>
+													<td>06/17/18</td>
+													<td>$950</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-547345645</td>
+													<td>06/16/18</td>
+													<td>$800</td>
+													<td><span class="badge badge-pill badge-warning">Pending</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-3464345</td>
+													<td>06/16/18</td>
+													<td>$650</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-346455</td>
+													<td>06/16/18</td>
+													<td>$650</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-345677</td>
+													<td>06/15/18</td>
+													<td>$650</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td>440-67867</td>
+													<td>06/14/18</td>
+													<td>$650</td>
+													<td><span class="badge badge-pill badge-success">Paid</span></td>
+													<td>
+														<a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+                        </div>
+                    							<div class="row">
+								<div class="col-md-4">
+									<div class="card">
+										<h5 class="card-header">Sales</h5>
+										<div class="card-body p-10">
+											  <h5 class="card-title secondary-type m-b-0 m-l-10">$43,000</h5>
+												<small class="text-muted m-l-10">Week of July 1st - July 5th</small>
+											<div id="ct-LineChart1" class="chartist-primary">
+												<div class="ct-chart"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="card">
+										<h5 class="card-header">Payouts</h5>
+										<div class="card-body p-10">
+											<h5 class="card-title secondary-type m-b-0 m-l-10">$19,320</h5>
+											<small class="text-muted m-l-10">Week of July 1st - July 5th</small>
+										<div id="ct-LineChart2" class="chartist-accent">
+											<div class="ct-chart"></div>
+										</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="card">
+										<h5 class="card-header">Total Revenue</h5>
+										<div class="card-body p-10">
+											<div id="total-revenue" style="height:290px"></div>
+										</div>
+										<div class="card-footer">
+											<ul class="list-reset list-inline-block text-center">
+												<li class="text-muted text-secondary m-r-10"><i class="badge badge-secondary m-r-5 badge-circle w-10 h-10"></i>Other</li>
+													<li class="text-muted text-primary m-r-10"><i class="badge badge-primary m-r-5  badge-circle w-10 h-10"></i>Returning</li>
+								         	<li class="text-muted text-info m-r-10"><i class="badge badge-info m-r-5  badge-circle w-10 h-10 "></i>New </li>
+										   	<li class="text-muted text-accent m-r-10 "><i class="badge badge-accent m-r-5  badge-circle w-10 h-10 "></i>Referrals </li>
+						       	</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="card">
+										<h5 class="card-header">
+											Monthly budget
+										</h5>
+										<div class="card-body p-0">
+											<div class="row m-0 col-border-xl">
+												<div class="col-md-2 p-20">
+													<div class="card-body p-0">
+														<h6>Total Income</h6>
+														<span class="h3 text-primary">$86,350</span>
+														<h6 class="m-t-20">Total Expenses</h6>
+														<span class="h3 text-danger">$28,300</span>
+														<h6 class="m-t-20 p-b-5">Top Expenses</h6>
+														<ul class="list-reset">
+															<li class="p-b-10">
+																Housing
+																<span class="float-right">$12,300</span>
+															</li>
+															<li class="p-b-10">
+																Cars
+																<span class="float-right">$3,650</span>
+															</li>
+															<li>
+																AT&T
+																<span class="float-right">$1,800</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-10">
+													<div class="card-body">
+														<div id="monthly-budget-2">
+															<div id="monthly-budget-content-2" style="height: 350px">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                    </section>
+					<section class="page-content container-fluid" id="reference">
+						<div class="row">
+							<div class="col">
+								<div class="card text-center" id="packages">
+
+									<h5 class="card-header">데이터 출처</h5>
+									<div class="card-body">
+										<p>공공데이터, 키프리스, 디자인맵 등의 웹페이지와 API, 이미지를 활용했습니다.</p>
+										<div class="togglebutton m-t-20 ">
+											<label>
+												<input type="checkbox" class="js-switch" id="toggle-price" />
+												<span class="toggle"></span><span class="p-l-10">상세 정보 확인</span>
+											</label>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="pricing-wrapper container-fluid">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="card-container">
+												<div class="card card-flip pricing-card">
+													<div class="card-front">
+														<div class="card-heading">
+															<div class="card-title">
+																<img width="150px" src="../static/assets/img/datagokr.png" />
+															</div>
+														</div>
+														<div class="card-body p-0">
+															<ul class="list-group list-group-flush text-center">
+                                                                <li class="list-group-item">공공 데이터를 제공</li>
+																<li class="list-group-item">파일데이터, 오픈API, 시각화</li>
+																<li class="list-group-item">정형화된 데이터로 활용이 쉬움</li>
+															</ul>
+														</div>
+														<div class="card-footer text-center ">
+                                                            <a href="http://data.go.kr"><button class="btn btn-primary btn-rounded btn-floating">웹페이지로 연결</button></a>
+														</div>
+													</div>
+													<div class="card-back">
+														<div class="card-heading">
+															<div class="card-title">
+                                                                <span class="pricing-title text-primary">공공데이터</span>
+															</div>
+														</div>
+														<div class="card-body p-0">
+															<ul class="list-group list-group-flush text-center">
+																<li class="list-group-item">상표정보(XML)</li>
+																<li class="list-group-item">특허/실용실안 공보(XML)</li>
+																<li class="list-group-item">상표정보 검색 서비스(XML)</li>
+															</ul>
+														</div>
+														<div class="card-footer text-center ">
+                                                            <a href="http://data.go.kr"><button class="btn btn-primary btn-rounded btn-floating">웹페이지로 연결</button></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="card-container">
+												<div class="card card-flip pricing-card">
+													<div class="card-front feature-pricing-card">
+														<div class="card-heading">
+															<div class="card-title">
+                                                                <img width="150px" src="../static/assets/img/kipris.png" />
+															</div>
+														</div>
+														<div class="card-body p-0">
+															<ul class="list-group list-group-flush text-center">
+																<li class="list-group-item">정부 운영 상표 DB 서비스</li>
+																<li class="list-group-item">지식 재산권 관련 정보 제공</li>
+																<li class="list-group-item">이용자 수준에 맞는 검색 기능</li>
+															</ul>
+														</div>
+														<div class="card-footer text-center ">
+                                                            <a href="http://kipris.or.kr"><button class="btn btn-accent btn-rounded btn-floating">웹페이지로 연결</button></a>
+														</div>
+													</div>
+													<div class="card-back feature-pricing-card">
+														<div class="card-heading">
+															<div class="card-title">
+																<span class="pricing-title text-accent">키프리스</span>
+															</div>
+														</div>
+														<div class="card-body p-0">
+															<ul class="list-group list-group-flush text-center">
+                                                                <li class="list-group-item">문서자료(PDF, csv)</li>
+																<li class="list-group-item">출원정보(Unique ID)</li>
+																<li class="list-group-item">상품 분류(Category)</li>
+															</ul>
+														</div>
+														<div class="card-footer text-center ">
+															<a href="http://kipris.or.kr"><button class="btn btn-accent btn-rounded btn-floating">웹페이지로 연결</button></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="card-container">
+												<div class="card card-flip pricing-card">
+													<div class="card-front">
+														<div class="card-heading">
+															<div class="card-title">
+                                                                <img width="150px" src="../static/assets/img/designmap.png" />
+															</div>
+														</div>
+														<div class="card-body p-0">
+															<ul class="list-group list-group-flush text-center">
+																<li class="list-group-item">특허청이 보유한 디자인 정보 DB</li>
+																<li class="list-group-item">지식 재산권 정보를 가공, 분석</li>
+																<li class="list-group-item">이미지 맵핑, 통계 분석 기능 제공</li>
+															</ul>
+														</div>
+														<div class="card-footer text-center ">
+                                                            <a href="http://designmap.or.kr"><button class="btn btn-primary btn-rounded btn-floating">웹페이지로 연결</button></a>
+														</div>
+													</div>
+													<div class="card-back">
+														<div class="card-heading">
+															<div class="card-title">
+															    <span class="pricing-title text-primary">디자인맵</span>
+															</div>
+														</div>
+														<div class="card-body p-0">
+															<ul class="list-group list-group-flush text-center">
+                                                                <li class="list-group-item">이미지 정보(png, jpg)</li>
+																<li class="list-group-item">웹 정보(url)</li>
+																<li class="list-group-item">부가 정보(text)</li>
+															</ul>
+														</div>
+														<div class="card-footer text-center ">
+															<a href="http://designmap.or.kr"><button class="btn btn-primary btn-rounded btn-floating">웹페이지로 연결</button></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="page-content container-fluid" id="github">
+						<div class="row">
+							<div class="col">
+								<div class="card text-center" id="packages">
+
+									<h5 class="card-header">GitHub</h5>
+									<div class="card-body">
+										<p>저희의 프로젝트에 대해 더 궁금한 사항이 있으시면, <a href="https://github.com/kthwang/marksearch">https://github.com/kthwang/marksearch</a> 의 주소로 접속하여 문의하여 주시기 바랍니다.</p>
+									</div>
+							    </div>
+						    </div>
+					    </div>
+				    </section>
+                <section class="page-content container-fluid">
+                    <div class="row">
+                    <div class="col-md-6 col-lg-3 col-xxl-3">
+									<div class="card contact-item">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<img src="../static/assets/img/avatars/02.jpg" alt="user" class="rounded-circle max-w-100 m-t-20">
+												</div>
+												<div class="col-md-12 text-center">
+													<h5 class="card-title">김태현</h5>
+													<small class="text-muted d-block"><i class="icon dripicons-mail"></i>thkim427@naver.com</small>
+													<small class="text-muted d-block">
+															<i class="icon dripicons-device-mobile"></i>
+															010-3318-4261
+														</small>
+												</div>
+											</div>
+										</div>
+										<div class="card-footer text-center p-0">
+											<div class="row m-0">
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-mail"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-phone"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="la la-github"></i>
+															</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /.col -->
+                    <!-- .col -->
+								<div class="col-md-6 col-lg-3 col-xxl-3">
+									<div class="card contact-item">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<img src="../static/assets/img/avatars/02.jpg" alt="user" class="rounded-circle max-w-100 m-t-20">
+												</div>
+												<div class="col-md-12 text-center">
+													<h5 class="card-title">정종찬</h5>
+													<small class="text-muted d-block"><i class="icon dripicons-mail"></i>lgsk77@naver.com</small>
+													<small class="text-muted d-block">
+															<i class="icon dripicons-device-mobile"></i>
+															010-9998-1521
+														</small>
+												</div>
+											</div>
+										</div>
+										<div class="card-footer text-center p-0">
+											<div class="row m-0">
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-mail"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-phone"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="la la-github"></i>
+															</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /.col -->
+								<!-- .col -->
+								<div class="col-md-6 col-lg-3 col-xxl-3">
+									<div class="card contact-item">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<img src="../static/assets/img/avatars/02.jpg" alt="user" class="rounded-circle max-w-100 m-t-20">
+												</div>
+												<div class="col-md-12 text-center">
+													<h5 class="card-title">황경태</h5>
+													<small class="text-muted d-block"><i class="icon dripicons-mail"></i>pianohkt@gmail.com</small>
+													<small class="text-muted d-block">
+															<i class="icon dripicons-device-mobile"></i>
+															010-6294-0812
+														</small>
+												</div>
+											</div>
+										</div>
+										<div class="card-footer text-center p-0">
+											<div class="row m-0">
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-mail"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-phone"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="la la-github"></i>
+															</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                    <div class="col-md-6 col-lg-3 col-xxl-3">
+									<div class="card contact-item">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<img src="../static/assets/img/avatars/02.jpg" alt="user" class="rounded-circle max-w-100 m-t-20">
+												</div>
+												<div class="col-md-12 text-center">
+													<h5 class="card-title">황재희</h5>
+													<small class="text-muted d-block"><i class="icon dripicons-mail"></i>hjh940922@gmail.com</small>
+													<small class="text-muted d-block">
+															<i class="icon dripicons-device-mobile"></i>
+															010-6740-1115
+                                                    </small>
+												</div>
+											</div>
+										</div>
+										<div class="card-footer text-center p-0">
+											<div class="row m-0">
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-mail"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="icon dripicons-phone"></i>
+															</a>
+													</div>
+												</div>
+												<div class="col-4 p-0">
+													<div class="contact">
+														<a href="#" class="d-block p-20">
+																<i class="la la-github"></i>
+															</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                        </div>
+                </section>
+				<!--END PAGE CONTENT -->
+		</div>
+		<!-- END CONTENT WRAPPER -->
+	</div>
+	<!-- ================== GLOBAL VENDOR SCRIPTS ==================-->
+	<script src="../static/assets/vendor/modernizr/modernizr.custom.js"></script>
+	<script src="../static/assets/vendor/jquery/dist/jquery.min.js"></script>
+	<script src="../static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../static/assets/vendor/js-storage/js.storage.js"></script>
+	<script src="../static/assets/vendor/js-cookie/src/js.cookie.js"></script>
+	<script src="../static/assets/vendor/pace/pace.js"></script>
+	<script src="../static/assets/vendor/metismenu/dist/metisMenu.js"></script>
+	<script src="../static/assets/vendor/switchery-npm/index.js"></script>
+	<script src="../static/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../static/assets/vendor/prism/prism.js"></script>
+    <!-- ================== PAGE LEVEL VENDOR SCRIPTS ==================-->
+    <script src="../static/assets/vendor/echarts/echarts-all-3.js"></script>
+    <script src="../static/assets/vendor/dropzone/dropzone.js"></script>
+    <script src="../static/assets/vendor/countup.js/dist/countUp.min.js"></script>
+    <script src="../static/assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="../static/assets/vendor/flot/jquery.flot.js"></script>
+    <script src="../static/assets/vendor/jquery.flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../static/assets/vendor/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="../static/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="../static/assets/vendor/jvectormap-next/jquery-jvectormap.min.js"></script>
+    <script src="../static/assets/vendor/jvectormap-next/jquery-jvectormap-world-mill.js"></script>
+    <script src="../static/assets/vendor/chartist/dist/chartist.js"></script>
+    <script src="../static/assets/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="../static/assets/vendor/flot/jquery.flot.time.js"></script>
+    <script src="../static/assets/vendor/flot.curvedlines/curvedLines.js"></script>
+    <script src="../static/assets/vendor/d3/dist/d3.min.js"></script>
+    <script src="../static/assets/vendor/c3/c3.min.js"></script>
+    <!-- ================== GLOBAL APP SCRIPTS ==================-->
+	<script src="../static/assets/js/global/app.js"></script>
+    <!-- ================== PAGE LEVEL APP SCRIPTS ==================-->
+    <script src="../static/assets/js/components/dropzone-init.js"></script>
+    <!-- ================== PAGE LEVEL CARD SCRIPTS ==================-->
+    <script src="../static/assets/js/cards/pricing-tables.js"></script>
+    <!-- ================== PAGE LEVEL SCRIPTS ==================-->
+    <script src="../static/assets/js/cards/sessions-by-location.js"></script>
+    <script src="../static/assets/js/components/countUp-init.js"></script>
+    <script src="../static/assets/js/cards/counter-group.js"></script>
+    <script src="../static/assets/js/cards/recent-transactions.js"></script>
+    <script src="../static/assets/js/cards/monthly-budget.js"></script>
+    <script src="../static/assets/js/cards/users-chart.js"></script>
+    <script src="../static/assets/js/cards/bounce-rate-chart.js"></script>
+    <script src="../static/assets/js/cards/session-duration-chart.js"></script>
+    <script src="../static/assets/js/cards/total-visits-chart.js"></script>
+    <script src="../static/assets/js/cards/total-unique-visits-chart.js"></script>
+    <script src="../static/assets/js/cards/bar-chart-line-three.js"></script>
+    <script src="../static/assets/js/cards/traffic-sources.js"></script>
+    <script src="../static/assets/js/cards/sales-chartist.js"></script>
+    <script src="../static/assets/js/cards/payout-chartist.js"></script>
+    <script src="../static/assets/js/cards/total-revenue.js"></script>
+    <script src="../static/assets/js/cards/monthly-budget-2.js"></script>
+	<script>
+        (function(window, document, $, undefined) {
+            "use strict";
+            $(function() {
+
+                // ==============================================================
+                // Traffic Sources Week
+                // ==============================================================
+                new Chartist.Line(
+                    "#distance_total", {
+                        labels: ["-3σ", "-2σ", "-1σ", "0", "1σ", "2σ", "3σ"],
+                        series: {{ Distance.distance_total }}
+                    }, {
+                        high: 15,
+                        low: 0,
+                        showArea: true,
+                        fullWidth: true,
+                        axisY: {
+                            onlyInteger: true,
+                            offset: 20,
+
+                        }
+                    }
+                );
+
+                // ==============================================================
+                // Traffic Sources Month
+                // ==============================================================
+
+                new Chartist.Line(
+                    "#distance_same", {
+                        labels: ["0", "4", "8", "12", "16", "20", "24", "28", "31"],
+                        series: {{ Distance.distance_same }}
+                    }, {
+                        high: 15,
+                        low: 0,
+                        showArea: true,
+                        fullWidth: true,
+
+                        axisY: {
+                            onlyInteger: true,
+                            offset: 20,
+                            labelInterpolationFnc: function(value) {
+                                return value / 1 + "k";
+                            }
+                        }
+                    }
+                );
+
+                // ==============================================================
+                // Traffic Sources Year
+                // ==============================================================
+
+                new Chartist.Line(
+                    "#distance_similar", {
+                        labels: ["0", "4", "8", "12", "16", "20", "24", "28", "32","36","40","44"],
+                        series: {{ Distance.distance_similar }}
+                    }, {
+                        high: 15,
+                        low: 0,
+                        showArea: true,
+                        fullWidth: true,
+
+                        axisY: {
+                            onlyInteger: true,
+                            offset: 20,
+                            labelInterpolationFnc: function(value) {
+                                return value / 1 + "k";
+                            }
+                        }
+                    }
+                );
+                // ==============================================================
+                // Trigger init of charts inside bootstrap tabs
+                // ==============================================================
+
+                $('a[data-toggle="pill"]').on("shown.bs.tab", function(event) {
+                    $(".ct-chart").each(function(i, e) {
+                        setTimeout(function() {
+                            e.__chartist__.update();
+                        }, 50);
+                    });
+                });
+            });
+
+        })(window, document, window.jQuery);
+    </script>
+    <script> (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46627904-1', 'authenticgoods.co');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+
+</html>
