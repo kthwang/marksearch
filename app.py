@@ -10,20 +10,23 @@ from PIL import Image
 app = Flask(__name__)
 dropzone =  Dropzone(app)
 
-imgframe = tc.load_sframe('model/net/img_test.sframe')
-model = tc.load_model('model/net/image_model')
-queryframe = tc.image_analysis.load_images('static/assets/file-upload')
-queryframe = queryframe.add_row_number()
-queryframe.save('model/querydata')
+class Turi():
 
-query_results = model.query(dataset = queryframe[0:1], k=None, radius = None, verbose = True)
 
-pathlist=[]
-cut = re.compile(r"\d{13}[.]jpg")
-resultpathlist = imgframe[query_results['reference_label']]['path']
-for path in resultpathlist:
-    marknum = cut.findall(path)
-    pathlist.append(marknum[0])
+# imgframe = tc.load_sframe('model/net/img_test.sframe')
+# model = tc.load_model('model/net/image_model')
+# queryframe = tc.image_analysis.load_images('static/assets/file-upload')
+# queryframe = queryframe.add_row_number()
+# queryframe.save('model/querydata')
+#
+# query_results = model.query(dataset = queryframe[0:1], k=None, radius = None, verbose = True)
+#
+# pathlist=[]
+# cut = re.compile(r"\d{13}[.]jpg")
+# resultpathlist = imgframe[query_results['reference_label']]['path']
+# for path in resultpathlist:
+#     marknum = cut.findall(path)
+#     pathlist.append(marknum[0])
 
 
 def store_image():
@@ -68,6 +71,11 @@ def upload():
                 f.save("static/assets/file-upload/"+secure_filename(f.filename))
                 return 'file save'
     return 'good'
+
+@app.route('/new')
+def newrender():
+    return render_template('section/section3.html')
+
 
 
 if __name__ == '__main__':
