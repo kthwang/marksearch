@@ -2,13 +2,13 @@ from flask import Flask, render_template, request, redirect
 import turicreate as tc
 
 app = Flask(__name__)
-
-data = tc.load_sframe('test.sframe')
-model = tc.load_model('imgset')
-
-image_show = model.query(data[0:10], k=20)
-
-
+#
+# data = tc.load_sframe('test.sframe')
+# model = tc.load_model('imgset')
+#
+# image_show = model.query(data[0:10], k=20)
+#
+#
 
 class Distance :
     distance_total=[
@@ -30,18 +30,9 @@ class Distance :
     count_similar = 3270
     count_total = 2039400
 
-@app.route('/test')
-def show_image():
-    return render_template('test.html', image_show)
-
 @app.route('/')
 def hello_world():
-    return render_template('index.html', Distance=Distance)
-
-#
-# @app.route('/analysis')
-# def analysis():
-#     return render_template('index.html',Distance=Distance)
+    return render_template('basic.html', Distance=Distance)
 
 
 if __name__ == '__main__':

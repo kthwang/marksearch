@@ -1,0 +1,62 @@
+<div class="col-lg-5">
+    <div class="card bg-primary" id="totalVisitsChart">
+        <div class="card-body p-0">
+            <div class="card-toolbar top-right">
+                <ul class="nav nav-pills nav-pills-light justify-content-end" id="total-visits-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="total-visits-link-1" data-toggle="pill" href="#total-visits-tab-1" role="tab" aria-controls="total-visits-tab-1" aria-selected="true">Average</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="total-visits-link-2" data-toggle="pill" href="#total-visits-tab-2" role="tab" aria-controls="total-visits-tab-2" aria-selected="false">Max</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="total-visits-link-3" data-toggle="pill" href="#total-visits-tab-3" role="tab" aria-controls="total-visits-tab-3" aria-selected="false">Min</a>
+                    </li>
+                </ul>
+            </div>
+            <h5 class="card-title border-none text-white p-l-20 p-t-20 m-b-0">Distance</h5>
+            <div class="tab-content" id="total-visits-tab-content">
+                <div class="tab-pane fade show active" id="total-visits-tab-1" role="tabpanel" aria-labelledby="total-visits-tab-1">
+                    <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.distance_avg }}">0</span>
+                </div>
+                <div class="tab-pane fade" id="total-visits-tab-2" role="tabpanel" aria-labelledby="total-visits-tab-2">
+                    <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.distance_max }}">0</span>
+                </div>
+                <div class="tab-pane fade" id="total-visits-tab-3" role="tabpanel" aria-labelledby="total-visits-tab-3">
+                    <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.distance_min }}">0</span>
+                </div>
+            </div>
+            <div class="ct-chart h-75 m-t-40"></div>
+        </div>
+    </div>
+    <div class="card bg-accent" id="totalUniqueVisitsChart">
+        <div class="card-body p-0">
+            <div class="card-toolbar top-right">
+                <ul class="nav nav-pills nav-pills-light justify-content-end" id="total-uniquevisits-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="total-uniquevisits-link-1" data-toggle="pill" href="#total-uniquevisits-tab-1" role="tab" aria-controls="total-uniquevisits-tab-1" aria-selected="true">Total</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="total-uniquevisits-link-2" data-toggle="pill" href="#total-uniquevisits-tab-2" role="tab" aria-controls="total-uniquevisits-tab-2" aria-selected="false">Almost Same</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="total-uniquevisits-link-3" data-toggle="pill" href="#total-uniquevisits-tab-3" role="tab" aria-controls="total-uniquevisits-tab-3" aria-selected="false">Similar</a>
+                    </li>
+                </ul>
+            </div>
+            <h5 class="card-title border-none text-white p-l-20 p-t-20  m-b-0">Count</h5>
+            <div class="tab-content" id="total-uniquevisits-tab-content">
+                <div class="tab-pane fade show active" id="total-uniquevisits-tab-1" role="tabpanel" aria-labelledby="total-uniquevisits-tab-1">
+                    <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.count_total }}">0</span>
+                </div>
+                <div class="tab-pane fade" id="total-uniquevisits-tab-2" role="tabpanel" aria-labelledby="total-uniquevisits-tab-2">
+                    <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.count_almost_same }}">0</span>
+                </div>
+                <div class="tab-pane fade" id="total-uniquevisits-tab-3" role="tabpanel" aria-labelledby="total-visits-tab-3">
+                    <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="{{ Distance.count_similar }}">0</span>
+                </div>
+            </div>
+            <div class="ct-chart h-75 m-t-40"></div>
+        </div>
+    </div>
+</div>
