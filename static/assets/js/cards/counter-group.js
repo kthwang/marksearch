@@ -7,13 +7,13 @@
   "use strict";
   $(function() {
     $(".progress-active-sessions .progress-bar").animate({
-      width: "72%"
+      width: "60%"
     }, 400);
     $(".progress-add-to-cart .progress-bar").animate({
-      width: "67%"
+      width: "57%"
     }, 400);
     $(".progress-new-account .progress-bar").animate({
-      width: "83%"
+      width: "10%"
     }, 400);
     $(".progress-total-revenue .progress-bar").animate({
       width: "77%"
