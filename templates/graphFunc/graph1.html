@@ -1,0 +1,37 @@
+<script>
+  (function(window, document, $, undefined) {
+        "use strict";
+        $(function() {
+
+            // ==============================================================
+            // Traffic Sources Week
+            // ==============================================================
+            new Chartist.Line(
+                "#distance_total", {
+                    labels: ["-3σ", "-2σ", "-1σ", "0", "1σ", "2σ", "3σ"],
+                    series: {{ Distance.distance_total }}
+                }, {
+                    high: {{ Distance.distance_max }},
+                    low: 0,
+                    showArea: true,
+                    fullWidth: true,
+                    axisY: {
+                        onlyInteger: true,
+                        offset: 20,
+
+                    }
+                }
+            );
+
+
+            $('a[data-toggle="pill"]').on("shown.bs.tab", function(event) {
+                $(".ct-chart").each(function(i, e) {
+                    setTimeout(function() {
+                        e.__chartist__.update();
+                    }, 50);
+                });
+            });
+        });
+
+    })(window, document, window.jQuery);
+</script>

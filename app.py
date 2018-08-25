@@ -5,6 +5,7 @@ import turicreate as tc
 from turicreate import SFrame, SArray
 from flask_dropzone import Dropzone
 from flask_sqlalchemy import SQLAlchemy
+import sqlite3
 import pandas as pd
 
 import re
@@ -36,66 +37,58 @@ photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 patch_request_class(app)  # set maximum file size, default is 16MB
 
-# class Turi:
-#     queryframe = tc.image_analysis.load_images('static/assets/file-upload')
-#     queryframe = queryframe.add_row_number()
-#     queryframe.save('model/querydata')
-#     query_results = model.query(dataset = queryframe[0:1], k=None, radius = None, verbose = True)
-#     pathlist=[]
-#     cut = re.compile(r"\d{13}[.]jpg")
-#     resultpathlist = imgframe[query_results['reference_label']]['path']
-#     for path in resultpathlist:
-#         marknum = cut.findall(path)
-#         pathlist.append(marknum[0])
-
-
 class TuriObj:
-    def __init__(self, imgUrl):
+    def __init__(self):
         self.imgframe = tc.load_sframe('model/net/img_test.sframe')
         self.model = tc.load_model('model/net/image_model')
-        self.sample = tc.Image(imgUrl, format='auto')
+        self.sample = tc.Image()
         self.results = SFrame()
         self.rows = SArray()
+        self.pathlist = []
+        self.distance_list = []
+
+    def create_sample(self, imgUrl):
+        self.sample = tc.Image(imgUrl, format='auto')
 
     def create_list(self):
         self.results = self.model.query(self.sample, k=None)
         self.rows = self.results['reference_label']
-        # for i in range(10):
-        #     self.imgframe.filter_by(self.rows, 'id')[i]['image']._to_pil_image().save('static/assets/img/list/{}.jpg'.format(i))
+        path_cutter = re.compile(r"\d{13}")
+        for i in range(10):
+            pathstr = str(self.imgframe[self.imgframe['id'] == self.results['reference_label'][i]]['path'])
+            self.pathlist.append(path_cutter.findall(pathstr)[0])
+            self.distance_list.append(str(self.results['distance'][i]))
         return self.results
 
-a = TuriObj('static/assets/file-upload/test.jpg')
-a.create_list()
+a = TuriObj()
 
-data = a.results.to_dataframe()
-print(data)
-
-
-class Distance :
-    top8 = 8
-    distance_top = [1, 2, 3, 4, 5, 6, 7, 8]
-    distance_avg = 10.73
-    distance_max = 32
-    distance_min = 7
-    count_almost_same = 72
-    count_similar = 3270
-    count_total = 2039400
-    distance_top = [1, 2, 3, 4, 5, 6, 7, 8]
-    distance_similar_b = [3, 4, 5, 6, 7, 8, 9, 10]
-    distance_total = [
-        [0.2, 0.5, 0.8, 6, 7, 14.5, 15],
-        [0.2, 1, 11.8, 14, 12.4, 1, 0.2]
-    ]
-    distance_same = [
-        [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6],
-        [0, 6, 5.5, 3, 3, 11, 7, 4, 7, 9]
-    ]
-    distance_similar = [
-        [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6, 4.7, 3, 5],
-        [0, 6, 5.5, 3, 3, 11, 7, 4, 7, 9, 10, 12, 13]
-    ]
+class Distance:
+    def __init__(self):
+        self.top8 = 8
+        self.distance_top = [1, 2, 3, 4, 5, 6, 7, 8]
+        self.distance_avg = 10.73
+        self.distance_max = 32
+        self.distance_min = 7
+        self.count_almost_same = 72
+        self.count_similar = 3270
+        self.count_total = 2039400
+        self.distance_top = [1, 2, 3, 4, 5, 6, 7, 8]
+        self.distance_similar_b = [3, 4, 5, 6, 7, 8, 9, 10]
+        self.distance_total = [
+                [0.2, 0.5, 0.8, 6, 7, 14.5, 15],
+                [0.2, 1, 11.8, 14, 12.4, 1, 0.2]
+            ]
+        self.distance_same = [
+                [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6],
+                [0, 6, 5.5, 3, 3, 11, 7, 4, 7, 9]
+            ]
+        self.distance_similar = [
+                [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6, 4.7, 3, 5],
+                [0, 6, 5.5, 3, 3, 11, 7, 4, 7, 9, 10, 12, 13]
+            ]
 
     def set_graph(self):
+        data = a.results.to_dataframe()
         self.top8 = data.head(n=8).distance.mean()
         self.distance_avg = data['distance'].mean()
         self.distance_max = data['distance'][len(data) - 1]
@@ -107,22 +100,22 @@ class Distance :
 
         self.distance_total = [
             [
-                (((data.iloc[int(self.count_total / 740)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min),
-                (((data.iloc[int(self.count_total / 44)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min),
-                (((data.iloc[int(self.count_total / 6)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min),
-                (((data.iloc[int(self.count_total / 2)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min),
-                (((data.iloc[int(self.count_total * 5 / 6)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min),
-                (((data.iloc[int(self.count_total * 43 / 44)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min),
-                (((data.iloc[int(self.count_total * 739 / 740)].distance) - self.distance_min) * 16) / (self.distance_max - self.distance_min)
+                (data.iloc[int(self.count_total / 740)].distance),
+                (data.iloc[int(self.count_total / 44)].distance),
+                (data.iloc[int(self.count_total / 6)].distance),
+                (data.iloc[int(self.count_total / 2)].distance),
+                (data.iloc[int(self.count_total * 5 / 6)].distance),
+                (data.iloc[int(self.count_total * 43 / 44)].distance),
+                (data.iloc[int(self.count_total * 739 / 740)].distance)
             ],
             [
-                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 740))].distance.count()) * 16 / self.count_total,
-                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 44))].distance.count()) * 16 / self.count_total,
-                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 6))].distance.count()) * 16 / self.count_total,
-                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 2))].distance.count()) * 16 / self.count_total,
-                (data.loc[data['distance'] > (self.distance_min + ((self.distance_max - self.distance_min) * 5 / 6))].distance.count()) * 16 / self.count_total,
-                (data.loc[data['distance'] > (self.distance_min + ((self.distance_max - self.distance_min) * 43 / 44))].distance.count()) * 16 / self.count_total,
-                (data.loc[data['distance'] > (self.distance_min + ((self.distance_max - self.distance_min) * 739 / 740))].distance.count()) * 16 / self.count_total
+                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 740))].distance.count()) * self.distance_max / self.count_total,
+                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 44))].distance.count()) * self.distance_max / self.count_total,
+                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 6))].distance.count()) * self.distance_max / self.count_total,
+                (data.loc[data['distance'] < (self.distance_min + ((self.distance_max - self.distance_min) / 2))].distance.count()) * self.distance_max / self.count_total,
+                (data.loc[data['distance'] > (self.distance_min + ((self.distance_max - self.distance_min) * 5 / 6))].distance.count()) * self.distance_max / self.count_total,
+                (data.loc[data['distance'] > (self.distance_min + ((self.distance_max - self.distance_min) * 43 / 44))].distance.count()) * self.distance_max / self.count_total,
+                (data.loc[data['distance'] > (self.distance_min + ((self.distance_max - self.distance_min) * 739 / 740))].distance.count()) * self.distance_max / self.count_total
             ]
         ]
         self.distance_same = [
@@ -156,45 +149,69 @@ class Distance :
             data.head(n=8).distance[7]
         ]
         self.distance_similar_b = [
-            data.iloc[int(Distance.count_similar * 1 / 8)].distance,
-            data.iloc[int(Distance.count_similar * 2 / 8)].distance,
-            data.iloc[int(Distance.count_similar * 3 / 8)].distance,
-            data.iloc[int(Distance.count_similar * 4 / 8)].distance,
-            data.iloc[int(Distance.count_similar * 5 / 8)].distance,
-            data.iloc[int(Distance.count_similar * 6 / 8)].distance,
-            data.iloc[int(Distance.count_similar * 7 / 8)].distance,
-            data.iloc[int(Distance.count_similar)].distance
+            data.iloc[int(self.count_similar * 1 / 8)].distance,
+            data.iloc[int(self.count_similar * 2 / 8)].distance,
+            data.iloc[int(self.count_similar * 3 / 8)].distance,
+            data.iloc[int(self.count_similar * 4 / 8)].distance,
+            data.iloc[int(self.count_similar * 5 / 8)].distance,
+            data.iloc[int(self.count_similar * 6 / 8)].distance,
+            data.iloc[int(self.count_similar * 7 / 8)].distance,
+            data.iloc[int(self.count_similar)].distance
         ]
 
+
 b = Distance()
-b.set_graph()
 
 
+class DBObj:
+    sqlite3_dbname = ""
+    db = None
+    cursor = None
 
-# class Distance:
-#     distance_total=[
-#         [0.2,0.5,0.8,6,7,14.5,15],
-#         [0.2,1,11.8,14,12.4,1,0.2]
-#     ]
-#     distance_same=[
-#         [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6],
-#         [0, 6, 5.5, 3, 3, 11, 7, 4, 7, 9]
-#     ]
-#     distance_similar=[
-#         [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6, 4.7, 3, 5],
-#         [0, 6, 5.5, 3, 3, 11, 7, 4, 7, 9, 10, 12, 13]
-#     ]
-#     distance_avg = 10.73
-#     distance_max = 15
-#     distance_min = 1
-#     count_almost_same = 72
-#     count_similar = 32700
-#     count_total = 2039400
+    def __init__(self):
+        self.obj_data = {}
+        self.obj_list = []
+
+    def open(self, sqlite3_name):
+        self.sqlite3_dbname = sqlite3_name
+        self.db = sqlite3.connect(self.sqlite3_dbname)
+        self.cursor = self.db.cursor()
+
+    def close(self):
+        if self.db != None:
+            self.db.close()
+
+    def commit(self):
+        self.db.commit()
+
+    def sql_exec(self, sql):
+        self.cursor.execute(sql)
+        self.commit()
+        return self.cursor
+
+    def find(self,Number):
+        self.cursor.execute("select * from mark_data where applicationNumber ="+str(Number))
+        list = self.cursor.fetchone()
+        da ={}
+        da['agentname'] =list[1]
+        da['applicationname']=list[2]
+        da['applicationdate'] = list[3]
+        da['applicationnumber'] = list[4]
+        da['applicationstatus'] = list[5]
+        da['bigdraw'] = list[6]
+        da['classiificationcode'] = list[7]
+        da['draw'] = list[8]
+        da['title'] = list[10]
+        da['viennacode'] = list[11]
+        return da
+
+sql_obj = DBObj()
+
 
 @app.route('/')
 def hello_world():
     sample = ''
-    return render_template('basic.html', Distance = b)
+    return render_template('basic.html', sql_obj= sql_obj.obj_list, Distance = b)
 
 
 @app.route('/test', methods=['POST', 'GET'])
@@ -232,12 +249,19 @@ def upload():
 def results():
     # set the file_urls and remove the session variable
     file_url = session['file_urls']
-    TuriObj(file_url).create_list()
-    return render_template('basic.html', file_url=file_url, Distance=b)
+    a.create_sample(file_url)
+    a.create_list()
+    return render_template('basic.html', file_url=file_url, Distance = b)
+
 
 @app.route('/start')
 def start():
-    pass
+    sql_obj.open("model/mark.db")
+    b.set_graph()
+    for i in a.pathlist:
+        sql_obj.obj_list.append(sql_obj.find(i))
+    return render_template('basic.html', file_url=session['file_urls'], Distance= b, sql_obj=sql_obj.obj_list, turi = a.distance_list)
+
 
 if __name__ == '__main__':
     app.run()

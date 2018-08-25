@@ -12,7 +12,12 @@
 {#        {%- include "graph/auditlog.html"  %}#}
 {#    </div>#}
     <div class="row">
-        {%- include "graph/userchart.html"  %}
+        <div class="col-12">
+            <div class="card-deck m-b-30">
+            {%- include "graph/userchart.html"  %}
+            {%- include "graph/twograph.html"  %}
+            </div>
+        </div>
     </div>
     <div class="row">
         {%- include "graph/lineargraph.html"  %}
@@ -25,9 +30,6 @@
         {%- include "graph/table.html"  %}
     </div>
     <div class="row">
-        {%- include "graph/twograph.html"  %}
-    </div>
-    <div class="row">
-        {%- include "graph/dynamicgraph.html"  %}
+{#        {%- include "graph/dynamicgraph.html"  %}#}
     </div>
 </section>

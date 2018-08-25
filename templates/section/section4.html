@@ -9,27 +9,30 @@
     <div class="row">
         <div class="card-deck col-12">
             <div class="card">
-                <img class="card-img-top px-5 py-5"  src="../../static/assets/img/list/0.jpg" alt="Card image cap">
+                <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/lg.png{% else %} {{ sql_obj[0]['bigdraw'] }}{% endif %}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">이미지번호1</h5>
-                    <p class="card-text">이미지설명1</p>
-                    <p class="card-text"><small class="text-muted">distance값</small></p>
+                    <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 1순위{% else %}등록번호:{{ sql_obj[0]['applicationnumber'] }}{% endif %}</h5>
+                    <p class="card-text">{% if sql_obj|length == 0  %}설명1{% else %}등록자:{{ sql_obj[0]['applicationname'] }}{% endif %}</p>
+                    <p class="card-text">{% if sql_obj|length == 0  %}설명1{% else %}상태:{{ sql_obj[0]['applicationstatus'] }}{% endif %}</p>
+                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[0]}}{% endif %}</small></p>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top px-5 py-5" src="../../static/assets/img/list/1.jpg" alt="Card image cap">
+                <img class="card-img-top px-5 py-5" src='{% if sql_obj|length == 0  %}static/assets/img/list/sk.png{% else %} {{ sql_obj[1]['bigdraw'] }} {% endif %}' alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">이미지번호2</h5>
-                    <p class="card-text">이미지설명2</p>
-                    <p class="card-text"><small class="text-muted">distance값</small></p>
+                    <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 2순위{% else %}등록번호:{{ sql_obj[1]['applicationnumber'] }}{% endif %}</h5>
+                    <p class="card-text">{% if sql_obj|length == 0  %}설명2{% else %}등록자:{{ sql_obj[1]['applicationname'] }}{% endif %}</p>
+                    <p class="card-text">{% if sql_obj|length == 0  %}설명2{% else %}상태:{{ sql_obj[1]['applicationstatus'] }}{% endif %}</p>
+                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[1]}}{% endif %}</small></p>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top px-5 py-5" src="../../static/assets/img/list/2.jpg" alt="Card image cap">
+                <img class="card-img-top px-5 py-5" src='{% if sql_obj|length == 0  %}static/assets/img/list/hy.jpg{% else %} {{ sql_obj[2]['bigdraw'] }} {% endif %}' alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">이미지번호3</h5>
-                    <p class="card-text">이미지설명3</p>
-                    <p class="card-text"><small class="text-muted">distance값</small></p>
+                    <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 3순위{% else %}등록번호:{{ sql_obj[2]['applicationnumber'] }}{% endif %}</h5>
+                    <p class="card-text">{% if sql_obj|length == 0  %}설명3{% else %}등록자:{{ sql_obj[2]['applicationname'] }}{% endif %}</p>
+                    <p class="card-text">{% if sql_obj|length == 0  %}설명3{% else %}상태:{{ sql_obj[2]['applicationstatus'] }}{% endif %}</p>
+                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[2]}}{% endif %}</small></p>
                 </div>
             </div>
         </div>
@@ -41,7 +44,7 @@
         </div>
         <div class="col-lg-8">
             <div class="card">
-                <h5 class="card-header">부가 이미지 리스트</h5>
+                <h5 class="card-header">순위 밖 이미지 리스트</h5>
                 <div class="card-body p-0 ">
                     <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -51,25 +54,81 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/3.jpg" alt="First slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/adidas.png{% else %} {{ sql_obj[3]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 4순위{% else %}등록번호:{{ sql_obj[3]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명4{% else %}등록자:{{ sql_obj[3]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명4{% else %}상태:{{ sql_obj[3]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[3]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/4.jpg" alt="Second slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/amazon.jpg{% else %} {{ sql_obj[4]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 5순위{% else %}등록번호:{{ sql_obj[4]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명5{% else %}등록자:{{ sql_obj[4]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명5{% else %}상태:{{ sql_obj[4]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[4]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/5.jpg" alt="Third slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/mac.png{% else %} {{ sql_obj[5]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 6순위{% else %}등록번호:{{ sql_obj[5]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명6{% else %}등록자:{{ sql_obj[5]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명6{% else %}상태:{{ sql_obj[5]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[5]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/6.jpg" alt="forth slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/mi.png{% else %} {{ sql_obj[6]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 7순위{% else %}등록번호:{{ sql_obj[6]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명7{% else %}등록자:{{ sql_obj[6]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명7{% else %}상태:{{ sql_obj[6]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[6]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/7.jpg" alt="fifth slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/nike.jpg{% else %} {{ sql_obj[7]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 8순위{% else %}등록번호:{{ sql_obj[7]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명8{% else %}등록자:{{ sql_obj[7]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명8{% else %}상태:{{ sql_obj[7]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[7]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/8.jpg" alt="sixth slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/apple.png{% else %} {{ sql_obj[8]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 9순위{% else %}등록번호:{{ sql_obj[8]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명9{% else %}등록자:{{ sql_obj[8]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명9{% else %}상태:{{ sql_obj[8]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[8]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block px-5 py-5" style="width:100%" src="../../static/assets/img/list/9.jpg" alt="seventh slide">
+                                <div class="card">
+                                    <img class="card-img-top px-5 py-5"  src="{% if sql_obj|length == 0  %}static/assets/img/list/sony.jpg{% else %} {{ sql_obj[9]['bigdraw'] }}{% endif %}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 10순위{% else %}등록번호:{{ sql_obj[9]['applicationnumber'] }}{% endif %}</h5>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명10{% else %}등록자:{{ sql_obj[9]['applicationname'] }}{% endif %}</p>
+                                        <p class="card-text">{% if sql_obj|length == 0  %}설명10{% else %}상태:{{ sql_obj[9]['applicationstatus'] }}{% endif %}</p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[9]}}{% endif %}</small></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">

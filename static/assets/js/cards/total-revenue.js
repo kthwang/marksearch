@@ -10,51 +10,51 @@
 // -----------------------------------------------------------------------------
 
 (function(window, document, $, undefined) {
-	  "use strict";
-	$(function() {
-		var chart = c3.generate({
-			bindto: "#total-revenue",
-			data: {
-				columns: [
-					["New", 25],
-					["Other", 10],
-					["Referrals", 25],
-					["Returning", 40]
-				],
+     "use strict";
+   $(function() {
+      var chart = c3.generate({
+         bindto: "#total-revenue",
+         data: {
+            columns: [
+                ["등록", 768120],
+                ["소멸", 529131],
+                ["거절", 429998],
+                ["기타", 216580 + 164910]
+            ],
 
-				type: "donut",
-				onclick: function(d, i) {
-					console.log("onclick", d, i);
-				},
-				onmouseover: function(d, i) {
-					console.log("onmouseover", d, i);
-				},
-				onmouseout: function(d, i) {
-					console.log("onmouseout", d, i);
-				}
-			},
-			donut: {
-				label: {
-					show: false
-				},
-				title: "Total Revenue",
-				width: 25
-			},
+            type: "donut",
+            onclick: function(d, i) {
+               console.log("onclick", d, i);
+            },
+            onmouseover: function(d, i) {
+               console.log("onmouseover", d, i);
+            },
+            onmouseout: function(d, i) {
+               console.log("onmouseout", d, i);
+            }
+         },
+         donut: {
+            label: {
+               show: false
+            },
+            title: "비율",
+            width: 25
+         },
 
-			legend: {
-				hide: true
-			},
-			color: {
-				pattern: [
-						QuantumPro.APP_COLORS.info,
-					QuantumPro.APP_COLORS.grey100,
+         legend: {
+            hide: true
+         },
+         color: {
+            pattern: [
+                  QuantumPro.APP_COLORS.info,
+               QuantumPro.APP_COLORS.grey100,
 
 
-					QuantumPro.APP_COLORS.accent,
-							QuantumPro.APP_COLORS.primary
-				]
-			}
-		});
+               QuantumPro.APP_COLORS.accent,
+                     QuantumPro.APP_COLORS.primary
+            ]
+         }
+      });
 
-	});
+   });
 })(window, document, window.jQuery);
