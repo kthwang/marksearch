@@ -11,7 +11,6 @@
 	<script src="../static/assets/vendor/prism/prism.js"></script>
     <!-- ================== PAGE LEVEL VENDOR SCRIPTS ==================-->
     <script src="../static/assets/vendor/echarts/echarts-all-3.js"></script>
-    <script src="../static/assets/vendor/dropzone/dropzone.js"></script>
     <script src="../static/assets/vendor/countup.js/dist/countUp.min.js"></script>
     <script src="../static/assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
     <script src="../static/assets/vendor/flot/jquery.flot.js"></script>
@@ -28,8 +27,6 @@
     <script src="../static/assets/vendor/c3/c3.min.js"></script>
     <!-- ================== GLOBAL APP SCRIPTS ==================-->
 	<script src="../static/assets/js/global/app.js"></script>
-    <!-- ================== PAGE LEVEL APP SCRIPTS ==================-->
-    <script src="../static/assets/js/components/dropzone-init.js"></script>
     <!-- ================== PAGE LEVEL CARD SCRIPTS ==================-->
     <script src="../static/assets/js/cards/pricing-tables.js"></script>
     <!-- ================== PAGE LEVEL SCRIPTS ==================-->
@@ -38,8 +35,6 @@
     <script src="../static/assets/js/cards/counter-group.js"></script>
     <script src="../static/assets/js/cards/recent-transactions.js"></script>
     <script src="../static/assets/js/cards/monthly-budget.js"></script>
-    <script src="../static/assets/js/cards/users-chart.js"></script>
-    <script src="../static/assets/js/cards/bounce-rate-chart.js"></script>
     <script src="../static/assets/js/cards/session-duration-chart.js"></script>
     <script src="../static/assets/js/cards/total-visits-chart.js"></script>
     <script src="../static/assets/js/cards/total-unique-visits-chart.js"></script>
@@ -151,4 +146,206 @@
 
     ga('create', 'UA-46627904-1', 'authenticgoods.co');
     ga('send', 'pageview');
+    </script>
+    <script>
+        (function(window, document, $, undefined) {
+        "use strict";
+      $(function() {
+        if ($('#usersChart').length == 0) {
+          return;
+        }
+        var ctx = document.getElementById("usersChart").getContext("2d");
+        var gradient = ctx.createLinearGradient(0, 0, 0, 240);
+        gradient.addColorStop(0, Chart.helpers.color(QuantumPro.APP_COLORS.info).alpha(0.9).rgbString());
+        gradient.addColorStop(1, Chart.helpers.color('#ffffff').alpha(0).rgbString());
+        var config = {
+          type: 'line',
+          data: {
+            labels: ['1st', "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"],
+            datasets: [{
+              label: "Distance값",
+              backgroundColor: gradient,
+              borderWidth: 2,
+              borderColor: QuantumPro.APP_COLORS.info,
+              pointBackgroundColor: Chart.helpers.color(QuantumPro.APP_COLORS.info).alpha(1).rgbString(),
+              pointBorderColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
+              pointHoverBackgroundColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
+              pointHoverBorderColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
+              data: {{ Distance.distance_top }}
+            }]
+          },
+          options: {
+            title: {
+              display: false,
+            },
+            tooltips: {
+              mode: 'nearest',
+              intersect: false,
+              position: 'nearest',
+              xPadding: 10,
+              yPadding: 10,
+              caretPadding: 10
+            },
+            legend: {
+              display: false
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines: false,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Month'
+                }
+              }],
+              yAxes: [{
+                display: false,
+                gridLines: false,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Value'
+                },
+                ticks: {
+                  beginAtZero: false
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0.000001
+              },
+              point: {
+                radius: 4,
+                borderWidth: 8
+              }
+            },
+            layout: {
+              padding: {
+                left: 0,
+                right: 0,
+                top: 50,
+                bottom: 0
+              }
+            }
+          }
+        };
+
+        var chart = new Chart(ctx, config);
+
+      });
+
+    })(window, document, window.jQuery);
+    </script>
+    <script>
+        (function(window, document, $, undefined) {
+          "use strict";
+          $(function() {
+
+            if ($('#bounceRateChart').length == 0) {
+              return;
+            }
+            var ctx = document.getElementById("bounceRateChart").getContext("2d");
+            var gradient = ctx.createLinearGradient(0, 0, 0, 240);
+            gradient.addColorStop(0, Chart.helpers.color(QuantumPro.APP_COLORS.warning).alpha(0.9).rgbString());
+            gradient.addColorStop(1, Chart.helpers.color('#ffffff').alpha(0).rgbString());
+            var config = {
+              type: 'line',
+                data: {
+                  labels: ['1st', "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"],
+                  datasets: [{
+                  label: "Distance값",
+                  backgroundColor: gradient,
+                  borderWidth: 2,
+                  borderColor: QuantumPro.APP_COLORS.warning,
+                  pointBackgroundColor: Chart.helpers.color(QuantumPro.APP_COLORS.warning).alpha(1).rgbString(),
+                  pointBorderColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
+                  pointHoverBackgroundColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
+                  pointHoverBorderColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
+                  data: {{ Distance.distance_similar_b }}
+                }]
+              },
+              options: {
+                title: {
+                  display: false,
+                },
+                tooltips: {
+                  mode: 'nearest',
+                  intersect: false,
+                  position: 'nearest',
+                  xPadding: 10,
+                  yPadding: 10,
+                  caretPadding: 10
+                },
+                legend: {
+                  display: false
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                  xAxes: [{
+                    display: false,
+                    gridLines: false,
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Month'
+                    }
+                  }],
+                  yAxes: [{
+                    display: false,
+                    gridLines: false,
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Value'
+                    },
+                    ticks: {
+                      beginAtZero: false
+                    }
+                  }]
+                },
+                elements: {
+                  line: {
+                    tension: 0.000001
+                  },
+                  point: {
+                    radius: 4,
+                    borderWidth: 8
+                  }
+                },
+                layout: {
+                  padding: {
+                    left: 0,
+                    right: 0,
+                    top: 50,
+                    bottom: 0
+                  }
+                }
+              }
+            };
+
+            var chart = new Chart(ctx, config);
+
+          });
+
+        })(window, document, window.jQuery);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sep = '\uE000'; // an unusual char: unicode 'Private Use, First'
+
+            window.addEventListener('pagehide', function(e) {
+                window.name += sep + window.pageXOffset + sep + window.pageYOffset;
+            });
+
+            if(window.name && window.name.indexOf(sep) > -1)
+            {
+                var parts = window.name.split(sep);
+                if(parts.length >= 3)
+                {
+                    window.name = parts[0];
+                    window.scrollTo(parseFloat(parts[parts.length - 2]), parseFloat(parts[parts.length - 1]));
+                }
+            }
+        });
     </script>

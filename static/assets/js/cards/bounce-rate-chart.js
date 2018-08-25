@@ -17,9 +17,9 @@
     gradient.addColorStop(1, Chart.helpers.color('#ffffff').alpha(0).rgbString());
     var config = {
       type: 'line',
-      data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July", "August"],
-        datasets: [{
+        data: {
+          labels: ["8rd", "7rd", "6rd", "5rd", "4rd", "3rd", "2nd", "1st"],
+          datasets: [{
           label: "Bounce Rate",
           backgroundColor: gradient,
           borderWidth: 2,
@@ -28,7 +28,7 @@
           pointBorderColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
           pointHoverBackgroundColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
           pointHoverBorderColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
-          data: [4, 5, 4, 6, 7, 6, 4, 2]
+          data: {{ Distance.distance_bottom }}
         }]
       },
       options: {
