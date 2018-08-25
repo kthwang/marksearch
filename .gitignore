@@ -7,5 +7,5 @@
 *.tar
 *.zip
 __pycache__/
-.idea/
+.idea/*
 model/
