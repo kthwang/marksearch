@@ -1,18 +1,17 @@
-from flask import Flask, render_template, request, redirect, session, url_for
+from flask import Flask, render_template, request, session, url_for
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 import os
-import turicreate as tc
-from turicreate import SFrame, SArray
+
 from flask_dropzone import Dropzone
 from flask_sqlalchemy import SQLAlchemy
-import sqlite3
+
+# Load Model Class
+from turi_model import TuriObj
+from db_model import DBObj
 import pandas as pd
+import sqlite3
 
-import re
-import PIL
-from PIL import Image
-
-
+# db Config
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///model/mark.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -27,40 +26,16 @@ app.config['DROPZONE_REDIRECT_VIEW'] = 'results'
 # Uploads settings
 app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd() + '/static/assets/file-upload'
 
-dropzone =  Dropzone(app)
+# Activate app
+dropzone = Dropzone(app)
 db = SQLAlchemy(app)
 
 
-
-
+# Connect Upload Router
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 patch_request_class(app)  # set maximum file size, default is 16MB
 
-class TuriObj:
-    def __init__(self):
-        self.imgframe = tc.load_sframe('model/net/img_test.sframe')
-        self.model = tc.load_model('model/net/image_model')
-        self.sample = tc.Image()
-        self.results = SFrame()
-        self.rows = SArray()
-        self.pathlist = []
-        self.distance_list = []
-
-    def create_sample(self, imgUrl):
-        self.sample = tc.Image(imgUrl, format='auto')
-
-    def create_list(self):
-        self.results = self.model.query(self.sample, k=None)
-        self.rows = self.results['reference_label']
-        path_cutter = re.compile(r"\d{13}")
-        for i in range(10):
-            pathstr = str(self.imgframe[self.imgframe['id'] == self.results['reference_label'][i]]['path'])
-            self.pathlist.append(path_cutter.findall(pathstr)[0])
-            self.distance_list.append(str(self.results['distance'][i]))
-        return self.results
-
-a = TuriObj()
 
 class Distance:
     def __init__(self):
@@ -159,58 +134,13 @@ class Distance:
             data.iloc[int(self.count_similar)].distance
         ]
 
-
+a = TuriObj()
 b = Distance()
-
-
-class DBObj:
-    sqlite3_dbname = ""
-    db = None
-    cursor = None
-
-    def __init__(self):
-        self.obj_data = {}
-        self.obj_list = []
-
-    def open(self, sqlite3_name):
-        self.sqlite3_dbname = sqlite3_name
-        self.db = sqlite3.connect(self.sqlite3_dbname)
-        self.cursor = self.db.cursor()
-
-    def close(self):
-        if self.db != None:
-            self.db.close()
-
-    def commit(self):
-        self.db.commit()
-
-    def sql_exec(self, sql):
-        self.cursor.execute(sql)
-        self.commit()
-        return self.cursor
-
-    def find(self,Number):
-        self.cursor.execute("select * from mark_data where applicationNumber ="+str(Number))
-        list = self.cursor.fetchone()
-        da ={}
-        da['agentname'] =list[1]
-        da['applicationname']=list[2]
-        da['applicationdate'] = list[3]
-        da['applicationnumber'] = list[4]
-        da['applicationstatus'] = list[5]
-        da['bigdraw'] = list[6]
-        da['classiificationcode'] = list[7]
-        da['draw'] = list[8]
-        da['title'] = list[10]
-        da['viennacode'] = list[11]
-        return da
-
 sql_obj = DBObj()
 
 
 @app.route('/')
 def hello_world():
-    sample = ''
     return render_template('basic.html', sql_obj= sql_obj.obj_list, Distance = b)
 
 

@@ -53,3 +53,6 @@ video {
     font-family: "Noto Sans KR", serif;
     font-weight: 400;
 }
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }

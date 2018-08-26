@@ -16,7 +16,7 @@
       width: "10%"
     }, 400);
     $(".progress-total-revenue .progress-bar").animate({
-      width: "77%"
+      width: "50%"
     }, 400);
 
   });
