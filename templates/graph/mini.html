@@ -70,12 +70,12 @@
                     유사도 추천 개수
                 </h6>
                 <div class="progress progress-total-revenue mt-4" style="height:7px;">
-                    <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="{{ Distance.distance_max }} or 50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <small class="text-muted float-left m-t-5 mb-3">
                     Distance Max값
                 </small>
-                <small class="text-muted float-right m-t-5 mb-3 counter" data-count="50">
+                <small class="text-muted float-right m-t-5 mb-3 counter" data-count="{{ Distance.distance_max }}">
                     0
                 </small>
             </div>
