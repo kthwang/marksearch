@@ -188,6 +188,7 @@ def results():
 def start():
     sql_obj.open("model/mark.db")
     b.set_graph()
+    sql_obj.obj_list = []
     for i in a.pathlist:
         sql_obj.obj_list.append(sql_obj.find(i))
     return render_template('basic.html', file_url=session['file_urls'], Distance= b, sql_obj=sql_obj.obj_list, turi = a.distance_list)
