@@ -4,8 +4,8 @@ import re
 
 class TuriObj:
     def __init__(self):
-        self.imgframe = tc.load_sframe('model/net/img_test.sframe')
-        self.model = tc.load_model('model/net/image_model')
+        self.imgframe = tc.load_sframe('model/final/final.sframe')
+        self.model = tc.load_model('model/final/final_model')
         self.sample = tc.Image()
         self.results = SFrame()
         self.rows = SArray()
