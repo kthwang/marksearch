@@ -23,5 +23,5 @@ class TuriObj:
         for i in range(10):
             pathstr = str(self.imgframe[self.imgframe['id'] == self.results['reference_label'][i]]['path'])
             self.pathlist.append(path_cutter.findall(pathstr)[0])
-            self.distance_list.append(str(self.results['distance'][i]))
+            self.distance_list.append(float(self.results['distance'][i]))
         return self.results

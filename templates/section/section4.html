@@ -14,7 +14,7 @@
                     <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 1순위{% else %}등록번호:{{ sql_obj[0]['applicationnumber'] }}{% endif %}</h5>
                     <p class="card-text">{% if sql_obj|length == 0  %}설명1{% else %}등록자:{{ sql_obj[0]['applicationname'] }}{% endif %}</p>
                     <p class="card-text">{% if sql_obj|length == 0  %}설명1{% else %}상태:{{ sql_obj[0]['applicationstatus'] }}{% endif %}</p>
-                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[0]}}{% endif %}</small></p>
+                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[0])|round(2)}} %{% endif %}</small></p>
                 </div>
             </div>
             <div class="card">
@@ -23,7 +23,7 @@
                     <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 2순위{% else %}등록번호:{{ sql_obj[1]['applicationnumber'] }}{% endif %}</h5>
                     <p class="card-text">{% if sql_obj|length == 0  %}설명2{% else %}등록자:{{ sql_obj[1]['applicationname'] }}{% endif %}</p>
                     <p class="card-text">{% if sql_obj|length == 0  %}설명2{% else %}상태:{{ sql_obj[1]['applicationstatus'] }}{% endif %}</p>
-                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[1]}}{% endif %}</small></p>
+                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[1])|round(2)}} %{% endif %}</small></p>
                 </div>
             </div>
             <div class="card">
@@ -32,7 +32,7 @@
                     <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 3순위{% else %}등록번호:{{ sql_obj[2]['applicationnumber'] }}{% endif %}</h5>
                     <p class="card-text">{% if sql_obj|length == 0  %}설명3{% else %}등록자:{{ sql_obj[2]['applicationname'] }}{% endif %}</p>
                     <p class="card-text">{% if sql_obj|length == 0  %}설명3{% else %}상태:{{ sql_obj[2]['applicationstatus'] }}{% endif %}</p>
-                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[2]}}{% endif %}</small></p>
+                    <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[2])|round(2)}} %{% endif %}</small></p>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 4순위{% else %}등록번호:{{ sql_obj[3]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명4{% else %}등록자:{{ sql_obj[3]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명4{% else %}상태:{{ sql_obj[3]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[3]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[3])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 5순위{% else %}등록번호:{{ sql_obj[4]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명5{% else %}등록자:{{ sql_obj[4]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명5{% else %}상태:{{ sql_obj[4]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[4]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[4])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 6순위{% else %}등록번호:{{ sql_obj[5]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명6{% else %}등록자:{{ sql_obj[5]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명6{% else %}상태:{{ sql_obj[5]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[5]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[5])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 7순위{% else %}등록번호:{{ sql_obj[6]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명7{% else %}등록자:{{ sql_obj[6]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명7{% else %}상태:{{ sql_obj[6]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[6]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[6])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 8순위{% else %}등록번호:{{ sql_obj[7]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명8{% else %}등록자:{{ sql_obj[7]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명8{% else %}상태:{{ sql_obj[7]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[7]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[7])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 9순위{% else %}등록번호:{{ sql_obj[8]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명9{% else %}등록자:{{ sql_obj[8]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명9{% else %}상태:{{ sql_obj[8]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[8]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[8])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                         <h5 class="card-title">{% if sql_obj|length == 0  %}유사도 10순위{% else %}등록번호:{{ sql_obj[9]['applicationnumber'] }}{% endif %}</h5>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명10{% else %}등록자:{{ sql_obj[9]['applicationname'] }}{% endif %}</p>
                                         <p class="card-text">{% if sql_obj|length == 0  %}설명10{% else %}상태:{{ sql_obj[9]['applicationstatus'] }}{% endif %}</p>
-                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}Distance 값:{{ turi[9]}}{% endif %}</small></p>
+                                        <p class="card-text"><small class="text-muted">{% if turi|length == 0  %}0{% else %}유사도 확률:{{100 - (2 * turi[9])|round(2)}} %{% endif %}</small></p>
                                     </div>
                                 </div>
                             </div>
