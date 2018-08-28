@@ -17,6 +17,7 @@ class TuriObj:
 
     def create_list(self):
         self.pathlist=[]
+        self.distance_list = []
         self.results = self.model.query(self.sample, k=None)
         self.rows = self.results['reference_label']
         path_cutter = re.compile(r"\d{13}")
